@@ -3,6 +3,8 @@ package com.virginmoney.transaction.service;
 
 import com.virginmoney.transaction.dto.TransactionDto;
 import com.virginmoney.transaction.dto.TransactionRequestDto;
+import com.virginmoney.transaction.exception.DatabaseFetchException;
+import com.virginmoney.transaction.exception.TransactionNotFound;
 import com.virginmoney.transaction.model.TransactionEntity;
 import com.virginmoney.transaction.repo.TransactionRepo;
 import org.springframework.http.HttpStatus;
@@ -102,13 +104,18 @@ public class TransactionServiceImpl implements TransactionService{
     private  List<TransactionEntity> fetchDataFromDb(String category) {
 
         List<TransactionEntity> allTransactions = new ArrayList<>();
+        Optional<List<TransactionEntity>> transactions = Optional.of(new ArrayList<TransactionEntity>());
 
-        Optional<List<TransactionEntity>> transactions = transactionRepo.findByCategory(category);
-
-        if (transactions.isPresent()) {
-            transactions.get().forEach(allTransactions::add);
+        try {
+            transactions = transactionRepo.findByCategory(category);
         }
-        return allTransactions;
+        catch (Exception exception){
+            throw new DatabaseFetchException("Error fetching transactions from database");
+        }
+        if (transactions.isPresent() && !transactions.get().isEmpty()) {
+            transactions.get().forEach(allTransactions::add);
+            return allTransactions;
+        } else throw new TransactionNotFound("No transactions found for the category : " + category);
     }
 
     private TransactionEntity mapToEntity(TransactionRequestDto transactionRequestDto) {
