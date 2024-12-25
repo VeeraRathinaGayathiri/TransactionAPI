@@ -104,6 +104,7 @@ public class TransactionServiceImpl implements TransactionService{
     private  List<TransactionEntity> fetchDataFromDb(String category) {
 
         List<TransactionEntity> allTransactions = new ArrayList<>();
+
         Optional<List<TransactionEntity>> transactions = Optional.of(new ArrayList<TransactionEntity>());
 
         try {
@@ -112,10 +113,12 @@ public class TransactionServiceImpl implements TransactionService{
         catch (Exception exception){
             throw new DatabaseFetchException("Error fetching transactions from database");
         }
+
         if (transactions.isPresent() && !transactions.get().isEmpty()) {
             transactions.get().forEach(allTransactions::add);
             return allTransactions;
-        } else throw new TransactionNotFound("No transactions found for the category : " + category);
+        } else
+            throw new TransactionNotFound("No transactions found for the category : " + category);
     }
 
     private TransactionEntity mapToEntity(TransactionRequestDto transactionRequestDto) {
