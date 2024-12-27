@@ -14,9 +14,9 @@ public interface TransactionService {
 
     ResponseEntity<Map<String, Double>> getMonthlyAverage(String category);
 
-    ResponseEntity<Map<String, Double>> getHighestSpend(String category, int year);
+    ResponseEntity<Double> getHighestSpend(String category, int year);
 
-    ResponseEntity<Map<String, Double>> getLowestSpend(String category, int year);
+    ResponseEntity<Double> getLowestSpend(String category, int year);
 
     ResponseEntity<TransactionDto> saveTransactions(TransactionRequestDto transactionRequestDto);
 }

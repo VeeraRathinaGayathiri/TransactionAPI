@@ -7,6 +7,8 @@ import com.virginmoney.transaction.exception.DatabaseFetchException;
 import com.virginmoney.transaction.exception.TransactionNotFound;
 import com.virginmoney.transaction.model.TransactionEntity;
 import com.virginmoney.transaction.repo.TransactionRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,7 +19,9 @@ import java.util.stream.Collectors;
 @Service
 public class TransactionServiceImpl implements TransactionService{
 
-    private final TransactionRepo transactionRepo;
+    private static final Logger logger = LoggerFactory.getLogger(TransactionServiceImpl.class);
+
+    private TransactionRepo transactionRepo;
 
     public TransactionServiceImpl(TransactionRepo transactionRepo) {
         this.transactionRepo = transactionRepo;
@@ -33,7 +37,11 @@ public class TransactionServiceImpl implements TransactionService{
                                             .map(this::mapToResponseDto)
                                             .sorted(Comparator.comparing(TransactionDto::date))
                                             .toList();
-            return new ResponseEntity<>(response, HttpStatus.OK);
+
+        logger.debug("Response Status: {}, TransactionSize: {}",
+               HttpStatus.OK, response.size());
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @Override
@@ -43,6 +51,8 @@ public class TransactionServiceImpl implements TransactionService{
         double totalSpend = allTransactions.stream()
                     .map(transactionEntity -> transactionEntity.getAmount())
                     .reduce(0.0, Double::sum);
+        logger.debug("Response Status: {}, totalspendCalculated: {}",
+                HttpStatus.OK, totalSpend > 0.0);
 
         return new ResponseEntity<>(totalSpend, HttpStatus.OK);
 
@@ -58,39 +68,39 @@ public class TransactionServiceImpl implements TransactionService{
                             Collectors.averagingDouble(TransactionEntity::getAmount)
                     ));
 
+        logger.debug("Response Status: {}, NoOfmonthlyAveragesReturned: {}",
+                HttpStatus.OK, result.size());
+
        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<Map<String, Double>> getHighestSpend(String category, int year) {
+    public ResponseEntity<Double> getHighestSpend(String category, int year) {
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
-        Map<String, Double> result = allTransactions.stream()
-                                        .filter(x -> x.getDate().toLocalDate().getYear() == year)
-                                        .collect(Collectors.groupingBy(
-                                                x -> x.getDate().toLocalDate().getMonth().name() + "_" + x.getDate().toLocalDate().getYear(),
-                                                Collectors.collectingAndThen(
-                                                        Collectors.maxBy(Comparator.comparing(TransactionEntity::getAmount)),
-                                                        optional -> optional.map(TransactionEntity::getAmount).orElse(0.0)
-                                                )
 
-                                        ));
-        return(new ResponseEntity<>(result, HttpStatus.OK));
+       OptionalDouble result = allTransactions.stream()
+                .filter(x -> x.getDate().toLocalDate().getYear() == year)
+               .mapToDouble(TransactionEntity::getAmount)
+               .max();
+
+        logger.debug("Response Status: {}, isHighestSpendCalculated: {}",
+                HttpStatus.OK, result.getAsDouble());
+
+        return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
     }
 
     @Override
-    public ResponseEntity<Map<String, Double>> getLowestSpend(String category, int year) {
+    public ResponseEntity<Double> getLowestSpend(String category, int year) {
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
-        Map<String, Double> result = allTransactions.stream()
-                                        .filter(x -> x.getDate().toLocalDate().getYear() == year)
-                                        .collect(Collectors.groupingBy(
-                                                x -> x.getDate().toLocalDate().getMonth().name() + "_" + x.getDate().toLocalDate().getYear(),
-                                                Collectors.collectingAndThen(
-                                                        Collectors.minBy(Comparator.comparing(TransactionEntity::getAmount)),
-                                                        optional -> optional.map(TransactionEntity::getAmount).orElse(0.0)
-                                                )
+        OptionalDouble result = allTransactions.stream()
+                .filter(x -> x.getDate().toLocalDate().getYear() == year)
+                .mapToDouble(TransactionEntity::getAmount)
+                .min();
 
-                                        ));
-        return(new ResponseEntity<>(result, HttpStatus.OK));
+        logger.debug("Response Status: {}, isLowestSpendCalculated: {}",
+                HttpStatus.OK, result.getAsDouble());
+
+        return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
     }
 
     @Override
@@ -101,7 +111,9 @@ public class TransactionServiceImpl implements TransactionService{
         return new ResponseEntity<>(mapToResponseDto(transactionEntity), HttpStatus.CREATED);
     }
 
-    private  List<TransactionEntity> fetchDataFromDb(String category) {
+     private List<TransactionEntity> fetchDataFromDb(String category) {
+
+        logger.info("Fecthing data from DB invoked");
 
         List<TransactionEntity> allTransactions = new ArrayList<>();
 
@@ -109,8 +121,10 @@ public class TransactionServiceImpl implements TransactionService{
 
         try {
             transactions = transactionRepo.findByCategory(category);
+            logger.debug("Data fetch - Successful");
         }
         catch (Exception exception){
+            logger.error("Error fetching data - throws exception");
             throw new DatabaseFetchException("Error fetching transactions from database");
         }
 
@@ -118,6 +132,7 @@ public class TransactionServiceImpl implements TransactionService{
             transactions.get().forEach(allTransactions::add);
             return allTransactions;
         } else
+            logger.error("No transaction found category {} - throws exception", category);
             throw new TransactionNotFound("No transactions found for the category : " + category);
     }
 
@@ -134,6 +149,7 @@ public class TransactionServiceImpl implements TransactionService{
 
     private TransactionDto mapToResponseDto(TransactionEntity transactionEntity){
 
+        logger.info("Entity to Dto Mapping invoked");
          return TransactionDto.builder()
                 .id(transactionEntity.getId())
                 .date(transactionEntity.getDate())

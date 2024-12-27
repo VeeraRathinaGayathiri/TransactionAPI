@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
-@Builder
 @Data
+@Builder
 @Entity
 @Table(name = "transaction")
 @AllArgsConstructor
@@ -21,7 +21,7 @@ public class TransactionEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @JsonFormat(pattern="dd/MMM/yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MMM/yyyy")
     private Date date;
 
     private String vendor;

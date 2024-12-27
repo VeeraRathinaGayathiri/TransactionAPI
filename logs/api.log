@@ -1,0 +1,820 @@
+2024-12-27T05:18:25.272Z  WARN 6136 --- [transaction] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13h28m44s191ms755µs600ns).
+2024-12-27T06:40:22.368Z  INFO 6136 --- [transaction] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-27T06:40:22.501Z  INFO 6136 --- [transaction] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-27T06:40:22.565Z  INFO 6136 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T06:40:22.627Z  INFO 6136 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T06:40:22.639Z  INFO 6136 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T06:46:18.124Z  INFO 12820 --- [transaction] [main] c.v.transaction.TransactionApplication   : Starting TransactionApplication using Java 17.0.7 with PID 12820 (C:\JavaProjects\VirginMOneyAssessment\transaction\target\classes started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T06:46:18.132Z DEBUG 12820 --- [transaction] [main] c.v.transaction.TransactionApplication   : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T06:46:18.134Z  INFO 12820 --- [transaction] [main] c.v.transaction.TransactionApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T06:46:21.387Z  INFO 12820 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T06:46:21.824Z  INFO 12820 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 362 ms. Found 1 JPA repository interface.
+2024-12-27T06:46:23.708Z  INFO 12820 --- [transaction] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-27T06:46:23.740Z  INFO 12820 --- [transaction] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-27T06:46:23.741Z  INFO 12820 --- [transaction] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-27T06:46:24.071Z  INFO 12820 --- [transaction] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-27T06:46:24.072Z  INFO 12820 --- [transaction] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5694 ms
+2024-12-27T06:46:26.851Z  INFO 12820 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T06:46:27.221Z  INFO 12820 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T06:46:27.340Z  INFO 12820 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T06:46:28.544Z  INFO 12820 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T06:46:28.912Z  INFO 12820 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T06:46:29.795Z  INFO 12820 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T06:46:29.803Z  INFO 12820 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T06:46:30.021Z  WARN 12820 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T06:46:30.108Z  INFO 12820 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T06:46:32.537Z  INFO 12820 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T06:46:32.598Z  INFO 12820 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T06:46:33.517Z  WARN 12820 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T06:46:33.886Z DEBUG 12820 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T06:46:34.115Z DEBUG 12820 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T06:46:34.250Z DEBUG 12820 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T06:46:34.389Z DEBUG 12820 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T06:46:34.552Z  INFO 12820 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T06:46:34.808Z  INFO 12820 --- [transaction] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-27T06:46:34.838Z  INFO 12820 --- [transaction] [main] c.v.transaction.TransactionApplication   : Started TransactionApplication in 18.298 seconds (process running for 19.241)
+2024-12-27T06:46:50.057Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-27T06:46:50.058Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-27T06:46:50.058Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-27T06:46:50.059Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-27T06:46:50.061Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-27T06:46:50.063Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2b76ecd5
+2024-12-27T06:46:50.064Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2f5a092e
+2024-12-27T06:46:50.065Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-27T06:46:50.065Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2024-12-27T06:46:50.081Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/transaction/MyMonthlyDD", parameters={}
+2024-12-27T06:46:50.108Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T06:46:50.151Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T06:46:50.152Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T06:46:50.430Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T06:46:50.432Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T06:46:50.433Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T06:46:50.433Z  INFO 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T06:46:50.433Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T06:46:50.475Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T06:46:50.488Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T06:46:50.549Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-12-27T07:02:12.215Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/transaction/trip", parameters={}
+2024-12-27T07:02:12.217Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T07:02:12.218Z  INFO 12820 --- [transaction] [http-nio-8080-exec-5] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: trip
+2024-12-27T07:02:12.218Z  INFO 12820 --- [transaction] [http-nio-8080-exec-5] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T07:02:12.222Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T07:02:12.223Z ERROR 12820 --- [transaction] [http-nio-8080-exec-5] c.v.t.service.TransactionServiceImpl     : No transaction found category trip - throws exception
+2024-12-27T07:02:12.232Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T07:02:12.233Z ERROR 12820 --- [transaction] [http-nio-8080-exec-5] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T07:02:12.239Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T07:02:12.241Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : trip, timestamp=173528293 (truncated)...]
+2024-12-27T07:02:12.247Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : trip]
+2024-12-27T07:02:12.248Z DEBUG 12820 --- [transaction] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-12-27T08:07:21.350Z  INFO 12820 --- [transaction] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-27T08:07:21.459Z  INFO 12820 --- [transaction] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-27T08:07:21.493Z  INFO 12820 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T08:07:21.580Z  INFO 12820 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T08:07:21.597Z  INFO 12820 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:34:47.970Z  INFO 2980 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 2980 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:34:47.973Z DEBUG 2980 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:34:47.976Z  INFO 2980 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:34:48.087Z DEBUG 2980 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5167268
+2024-12-27T19:34:49.863Z  INFO 2980 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:34:50.018Z  INFO 2980 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 1 JPA repository interface.
+2024-12-27T19:34:51.053Z  INFO 2980 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:34:51.213Z  INFO 2980 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:34:51.304Z  INFO 2980 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:34:52.046Z  INFO 2980 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:34:52.140Z  INFO 2980 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:34:52.842Z  INFO 2980 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:34:52.849Z  INFO 2980 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:34:52.915Z  WARN 2980 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:34:52.971Z  INFO 2980 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:34:54.714Z  INFO 2980 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:34:54.771Z  INFO 2980 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:34:55.849Z  WARN 2980 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:34:56.062Z DEBUG 2980 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:34:56.322Z DEBUG 2980 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:34:56.397Z DEBUG 2980 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:34:56.526Z DEBUG 2980 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:34:56.612Z  INFO 2980 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:34:56.761Z  INFO 2980 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:34:56.762Z  INFO 2980 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:34:56.764Z  INFO 2980 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T19:34:56.840Z  INFO 2980 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.706 seconds (process running for 12.24)
+2024-12-27T19:34:57.831Z DEBUG 2980 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:34:57.894Z  INFO 2980 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T19:34:57.894Z  INFO 2980 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:34:58.180Z DEBUG 2980 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:34:58.180Z ERROR 2980 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T19:34:58.183Z DEBUG 2980 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T19:34:58.184Z ERROR 2980 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T19:34:58.259Z DEBUG 2980 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:34:58.265Z DEBUG 2980 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T19:34:58.284Z DEBUG 2980 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T19:34:58.415Z DEBUG 2980 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5167268, started on Fri Dec 27 19:34:48 GMT 2024
+2024-12-27T19:34:58.439Z  INFO 2980 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:34:58.448Z  INFO 2980 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:34:58.479Z  INFO 2980 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:36:09.536Z  INFO 9452 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 9452 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:36:09.539Z DEBUG 9452 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:36:09.543Z  INFO 9452 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:36:09.580Z DEBUG 9452 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5167268
+2024-12-27T19:36:11.094Z  INFO 9452 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:36:11.250Z  INFO 9452 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 1 JPA repository interface.
+2024-12-27T19:36:12.299Z  INFO 9452 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:36:12.421Z  INFO 9452 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:36:12.487Z  INFO 9452 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:36:13.123Z  INFO 9452 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:36:13.199Z  INFO 9452 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:36:13.630Z  INFO 9452 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:36:13.634Z  INFO 9452 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:36:13.687Z  WARN 9452 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:36:13.737Z  INFO 9452 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:36:15.258Z  INFO 9452 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:36:15.301Z  INFO 9452 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:36:16.217Z  WARN 9452 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:36:16.405Z DEBUG 9452 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:36:16.678Z DEBUG 9452 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:36:16.748Z DEBUG 9452 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:36:16.842Z DEBUG 9452 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:36:16.930Z  INFO 9452 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:36:17.078Z  INFO 9452 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:36:17.079Z  INFO 9452 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:36:17.082Z  INFO 9452 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T19:36:17.168Z  INFO 9452 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 8.398 seconds (process running for 10.722)
+2024-12-27T19:36:18.144Z DEBUG 9452 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:36:18.207Z  INFO 9452 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T19:36:18.208Z  INFO 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:36:18.494Z DEBUG 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:36:18.496Z  INFO 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:36:18.498Z  INFO 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:36:18.498Z  INFO 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:36:18.499Z DEBUG 9452 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T19:36:18.556Z DEBUG 9452 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:36:18.571Z DEBUG 9452 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T19:36:18.884Z DEBUG 9452 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5167268, started on Fri Dec 27 19:36:09 GMT 2024
+2024-12-27T19:36:18.896Z  INFO 9452 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:36:18.901Z  INFO 9452 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:36:18.905Z  INFO 9452 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:37:37.363Z  INFO 10116 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 10116 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:37:37.365Z DEBUG 10116 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:37:37.367Z  INFO 10116 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:37:37.400Z DEBUG 10116 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5167268
+2024-12-27T19:37:38.913Z  INFO 10116 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:37:39.069Z  INFO 10116 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 1 JPA repository interface.
+2024-12-27T19:37:40.671Z  INFO 10116 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:37:40.838Z  INFO 10116 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:37:40.956Z  INFO 10116 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:37:41.804Z  INFO 10116 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:37:41.871Z  INFO 10116 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:37:42.405Z  INFO 10116 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:37:42.411Z  INFO 10116 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:37:42.483Z  WARN 10116 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:37:42.534Z  INFO 10116 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:37:44.411Z  INFO 10116 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:37:44.470Z  INFO 10116 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:37:45.362Z  WARN 10116 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:37:45.571Z DEBUG 10116 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:37:45.807Z DEBUG 10116 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:37:45.869Z DEBUG 10116 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:37:45.988Z DEBUG 10116 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:37:46.095Z  INFO 10116 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:37:46.226Z  INFO 10116 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:37:46.227Z  INFO 10116 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:37:46.229Z  INFO 10116 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T19:37:46.302Z  INFO 10116 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.739 seconds (process running for 12.051)
+2024-12-27T19:37:47.512Z DEBUG 10116 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:37:47.560Z  INFO 10116 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T19:37:47.561Z  INFO 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:37:47.862Z DEBUG 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:37:47.864Z  INFO 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:37:47.866Z  INFO 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:37:47.867Z  INFO 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:37:47.868Z DEBUG 10116 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T19:37:47.917Z DEBUG 10116 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:37:47.937Z DEBUG 10116 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T19:37:48.159Z DEBUG 10116 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5167268, started on Fri Dec 27 19:37:37 GMT 2024
+2024-12-27T19:37:48.167Z  INFO 10116 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:37:48.171Z  INFO 10116 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:37:48.177Z  INFO 10116 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:50:54.646Z  INFO 20260 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 20260 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:50:54.649Z DEBUG 20260 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:50:54.652Z  INFO 20260 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:50:54.698Z DEBUG 20260 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@29d2d081
+2024-12-27T19:50:56.497Z  INFO 20260 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:50:56.753Z  INFO 20260 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 215 ms. Found 1 JPA repository interface.
+2024-12-27T19:50:58.290Z  INFO 20260 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:50:58.434Z  INFO 20260 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:50:58.528Z  INFO 20260 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:50:59.209Z  INFO 20260 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:50:59.302Z  INFO 20260 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:50:59.840Z  INFO 20260 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:50:59.846Z  INFO 20260 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:50:59.908Z  WARN 20260 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:50:59.956Z  INFO 20260 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:51:01.491Z  INFO 20260 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:51:01.531Z  INFO 20260 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:51:02.468Z  WARN 20260 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:51:02.637Z DEBUG 20260 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:51:02.878Z DEBUG 20260 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:51:02.946Z DEBUG 20260 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:51:03.035Z DEBUG 20260 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:51:03.118Z  INFO 20260 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:51:03.267Z  INFO 20260 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:51:03.268Z  INFO 20260 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:51:03.271Z  INFO 20260 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T19:51:03.371Z  INFO 20260 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.558 seconds (process running for 11.902)
+2024-12-27T19:51:04.299Z DEBUG 20260 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:51:04.350Z  INFO 20260 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T19:51:04.351Z  INFO 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:51:04.632Z DEBUG 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:51:04.633Z  INFO 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:51:04.636Z  INFO 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:51:04.637Z  INFO 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T19:51:04.637Z DEBUG 20260 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T19:51:04.693Z DEBUG 20260 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:51:04.708Z DEBUG 20260 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T19:51:04.993Z DEBUG 20260 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@29d2d081, started on Fri Dec 27 19:50:54 GMT 2024
+2024-12-27T19:51:05.000Z  INFO 20260 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:51:05.005Z  INFO 20260 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:51:05.026Z  INFO 20260 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:53:57.369Z  INFO 11612 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 11612 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:53:57.372Z DEBUG 11612 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:53:57.374Z  INFO 11612 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:53:57.427Z DEBUG 11612 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T19:53:58.979Z  INFO 11612 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:53:59.105Z  INFO 11612 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interface.
+2024-12-27T19:54:00.085Z  INFO 11612 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:54:00.202Z  INFO 11612 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:54:00.279Z  INFO 11612 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:54:01.020Z  INFO 11612 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:54:01.097Z  INFO 11612 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:54:01.614Z  INFO 11612 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:54:01.618Z  INFO 11612 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:54:01.664Z  WARN 11612 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:54:01.719Z  INFO 11612 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:54:03.678Z  INFO 11612 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:54:03.722Z  INFO 11612 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:54:04.623Z  WARN 11612 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:54:04.785Z DEBUG 11612 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:54:05.046Z DEBUG 11612 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:54:05.099Z DEBUG 11612 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:54:05.193Z DEBUG 11612 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:54:05.311Z  INFO 11612 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:54:05.462Z  INFO 11612 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:54:05.465Z  INFO 11612 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:54:05.468Z  INFO 11612 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T19:54:05.571Z  INFO 11612 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 8.99 seconds (process running for 11.247)
+2024-12-27T19:54:06.539Z DEBUG 11612 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:54:06.587Z  INFO 11612 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T19:54:06.588Z  INFO 11612 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:54:06.824Z DEBUG 11612 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:54:06.825Z ERROR 11612 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T19:54:06.828Z DEBUG 11612 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T19:54:06.828Z ERROR 11612 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T19:54:06.880Z DEBUG 11612 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:54:06.886Z DEBUG 11612 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T19:54:06.916Z DEBUG 11612 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T19:54:07.096Z DEBUG 11612 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 19:53:57 GMT 2024
+2024-12-27T19:54:07.111Z  INFO 11612 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:54:07.115Z  INFO 11612 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:54:07.123Z  INFO 11612 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:55:43.874Z  INFO 18536 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 18536 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:55:43.877Z DEBUG 18536 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:55:43.879Z  INFO 18536 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:55:43.917Z DEBUG 18536 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@40e4ea87
+2024-12-27T19:55:45.488Z  INFO 18536 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:55:45.644Z  INFO 18536 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
+2024-12-27T19:55:46.666Z  INFO 18536 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:55:46.850Z  INFO 18536 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:55:46.954Z  INFO 18536 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:55:47.689Z  INFO 18536 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:55:47.761Z  INFO 18536 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:55:48.126Z  INFO 18536 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:55:48.130Z  INFO 18536 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:55:48.170Z  WARN 18536 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:55:48.211Z  INFO 18536 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:55:49.946Z  INFO 18536 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:55:50.007Z  INFO 18536 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:55:50.915Z  WARN 18536 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:55:51.091Z DEBUG 18536 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:55:51.369Z DEBUG 18536 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:55:51.430Z DEBUG 18536 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:55:51.513Z DEBUG 18536 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:55:51.601Z  INFO 18536 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:55:51.742Z  INFO 18536 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:55:51.744Z  INFO 18536 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:55:51.746Z  INFO 18536 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-12-27T19:55:51.811Z  INFO 18536 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 8.742 seconds (process running for 11.088)
+2024-12-27T19:55:52.762Z DEBUG 18536 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:55:52.803Z  INFO 18536 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T19:55:52.803Z  INFO 18536 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:55:53.082Z DEBUG 18536 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:55:53.082Z ERROR 18536 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T19:55:53.085Z DEBUG 18536 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T19:55:53.086Z ERROR 18536 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T19:55:53.161Z DEBUG 18536 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:55:53.167Z DEBUG 18536 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T19:55:53.184Z DEBUG 18536 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T19:55:53.260Z DEBUG 18536 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@40e4ea87, started on Fri Dec 27 19:55:43 GMT 2024
+2024-12-27T19:55:53.378Z  INFO 18536 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:55:53.385Z  INFO 18536 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:55:53.410Z  INFO 18536 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T19:56:23.685Z  INFO 14864 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 14864 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T19:56:23.687Z DEBUG 14864 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T19:56:23.690Z  INFO 14864 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T19:56:23.740Z DEBUG 14864 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@40e4ea87
+2024-12-27T19:56:25.285Z  INFO 14864 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T19:56:25.426Z  INFO 14864 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 1 JPA repository interface.
+2024-12-27T19:56:26.486Z  INFO 14864 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T19:56:26.606Z  INFO 14864 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T19:56:26.697Z  INFO 14864 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T19:56:27.365Z  INFO 14864 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T19:56:27.419Z  INFO 14864 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T19:56:27.825Z  INFO 14864 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T19:56:27.829Z  INFO 14864 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T19:56:27.868Z  WARN 14864 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T19:56:27.911Z  INFO 14864 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T19:56:29.379Z  INFO 14864 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T19:56:29.439Z  INFO 14864 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:56:30.427Z  WARN 14864 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T19:56:30.585Z DEBUG 14864 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T19:56:30.836Z DEBUG 14864 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T19:56:30.903Z DEBUG 14864 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T19:56:30.989Z DEBUG 14864 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T19:56:31.079Z  INFO 14864 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T19:56:31.211Z  INFO 14864 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T19:56:31.215Z  INFO 14864 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T19:56:31.219Z  INFO 14864 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-12-27T19:56:31.337Z  INFO 14864 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 8.457 seconds (process running for 10.694)
+2024-12-27T19:56:32.262Z DEBUG 14864 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T19:56:32.311Z  INFO 14864 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T19:56:32.311Z  INFO 14864 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T19:56:32.566Z DEBUG 14864 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T19:56:32.567Z ERROR 14864 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T19:56:32.572Z DEBUG 14864 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T19:56:32.572Z ERROR 14864 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T19:56:32.639Z DEBUG 14864 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T19:56:32.645Z DEBUG 14864 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T19:56:32.670Z DEBUG 14864 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T19:56:32.851Z DEBUG 14864 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@40e4ea87, started on Fri Dec 27 19:56:23 GMT 2024
+2024-12-27T19:56:32.872Z  INFO 14864 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T19:56:32.877Z  INFO 14864 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T19:56:32.884Z  INFO 14864 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:08:33.598Z  INFO 10068 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 10068 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:08:33.601Z DEBUG 10068 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:08:33.603Z  INFO 10068 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:08:33.668Z DEBUG 10068 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:08:35.853Z  INFO 10068 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:08:36.007Z  INFO 10068 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interface.
+2024-12-27T20:08:37.102Z  INFO 10068 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:08:37.284Z  INFO 10068 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:08:37.391Z  INFO 10068 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:08:38.241Z  INFO 10068 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:08:38.340Z  INFO 10068 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:08:38.929Z  INFO 10068 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:08:38.947Z  INFO 10068 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:08:39.022Z  WARN 10068 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:08:39.079Z  INFO 10068 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:08:41.148Z  INFO 10068 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:08:41.199Z  INFO 10068 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:08:42.275Z  WARN 10068 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:08:42.500Z DEBUG 10068 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:08:42.757Z DEBUG 10068 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:08:42.831Z DEBUG 10068 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:08:42.923Z DEBUG 10068 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:08:43.029Z  INFO 10068 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:08:43.168Z  INFO 10068 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:08:43.169Z  INFO 10068 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:08:43.172Z  INFO 10068 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T20:08:43.247Z  INFO 10068 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 10.558 seconds (process running for 13.737)
+2024-12-27T20:08:44.304Z DEBUG 10068 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:08:44.357Z  INFO 10068 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:08:44.358Z  INFO 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:08:44.645Z DEBUG 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:08:44.646Z  INFO 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:08:44.648Z  INFO 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:08:44.648Z  INFO 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:08:44.649Z DEBUG 10068 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:08:44.692Z DEBUG 10068 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:08:44.703Z DEBUG 10068 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:08:44.954Z DEBUG 10068 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:08:33 GMT 2024
+2024-12-27T20:08:44.963Z  INFO 10068 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:08:44.967Z  INFO 10068 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:08:44.970Z  INFO 10068 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:09:27.438Z  INFO 2960 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 2960 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:09:27.442Z DEBUG 2960 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:09:27.445Z  INFO 2960 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:09:27.499Z DEBUG 2960 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:09:29.206Z  INFO 2960 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:09:29.333Z  INFO 2960 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 1 JPA repository interface.
+2024-12-27T20:09:30.417Z  INFO 2960 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:09:30.601Z  INFO 2960 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:09:30.723Z  INFO 2960 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:09:31.607Z  INFO 2960 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:09:31.716Z  INFO 2960 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:09:32.233Z  INFO 2960 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:09:32.237Z  INFO 2960 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:09:32.290Z  WARN 2960 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:09:32.341Z  INFO 2960 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:09:34.207Z  INFO 2960 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:09:34.249Z  INFO 2960 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:09:35.204Z  WARN 2960 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:09:35.384Z DEBUG 2960 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:09:35.658Z DEBUG 2960 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:09:35.722Z DEBUG 2960 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:09:35.818Z DEBUG 2960 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:09:35.908Z  INFO 2960 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:09:36.071Z  INFO 2960 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:09:36.072Z  INFO 2960 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:09:36.074Z  INFO 2960 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-12-27T20:09:36.163Z  INFO 2960 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.531 seconds (process running for 11.884)
+2024-12-27T20:09:37.171Z DEBUG 2960 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:09:37.225Z  INFO 2960 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:09:37.226Z  INFO 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:09:37.555Z DEBUG 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:09:37.557Z  INFO 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:09:37.558Z  INFO 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:09:37.560Z  INFO 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:09:37.561Z DEBUG 2960 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:09:37.622Z DEBUG 2960 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:09:37.637Z DEBUG 2960 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:09:37.998Z DEBUG 2960 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:09:27 GMT 2024
+2024-12-27T20:09:38.005Z  INFO 2960 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:09:38.011Z  INFO 2960 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:09:38.019Z  INFO 2960 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:10:17.077Z  INFO 10904 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 10904 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:10:17.080Z DEBUG 10904 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:10:17.082Z  INFO 10904 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:10:17.183Z DEBUG 10904 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:10:18.799Z  INFO 10904 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:10:18.943Z  INFO 10904 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
+2024-12-27T20:10:19.929Z  INFO 10904 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:10:20.070Z  INFO 10904 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:10:20.181Z  INFO 10904 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:10:20.898Z  INFO 10904 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:10:20.967Z  INFO 10904 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:10:21.431Z  INFO 10904 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:10:21.436Z  INFO 10904 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:10:21.484Z  WARN 10904 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:10:21.533Z  INFO 10904 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:10:23.154Z  INFO 10904 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:10:23.197Z  INFO 10904 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:10:24.157Z  WARN 10904 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:10:24.350Z DEBUG 10904 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:10:24.595Z DEBUG 10904 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:10:24.669Z DEBUG 10904 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:10:24.779Z DEBUG 10904 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:10:24.863Z  INFO 10904 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:10:24.994Z  INFO 10904 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:10:24.995Z  INFO 10904 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:10:24.997Z  INFO 10904 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-12-27T20:10:25.072Z  INFO 10904 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 8.833 seconds (process running for 11.133)
+2024-12-27T20:10:26.154Z DEBUG 10904 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:10:26.206Z  INFO 10904 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:10:26.207Z  INFO 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:10:26.457Z DEBUG 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:10:26.458Z  INFO 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:10:26.460Z  INFO 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:10:26.461Z  INFO 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:10:26.461Z DEBUG 10904 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:10:26.505Z DEBUG 10904 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:10:26.521Z DEBUG 10904 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:10:26.818Z DEBUG 10904 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:10:17 GMT 2024
+2024-12-27T20:10:26.825Z  INFO 10904 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:10:26.831Z  INFO 10904 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:10:26.838Z  INFO 10904 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:11:06.179Z  INFO 16172 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 16172 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:11:06.182Z DEBUG 16172 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:11:06.184Z  INFO 16172 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:11:06.247Z DEBUG 16172 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:11:07.941Z  INFO 16172 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:11:08.103Z  INFO 16172 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interface.
+2024-12-27T20:11:09.180Z  INFO 16172 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:11:09.334Z  INFO 16172 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:11:09.452Z  INFO 16172 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:11:10.190Z  INFO 16172 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:11:10.387Z  INFO 16172 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:11:10.910Z  INFO 16172 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:11:10.913Z  INFO 16172 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:11:10.953Z  WARN 16172 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:11:11.001Z  INFO 16172 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:11:12.449Z  INFO 16172 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:11:12.494Z  INFO 16172 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:11:13.516Z  WARN 16172 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:11:13.750Z DEBUG 16172 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:11:13.996Z DEBUG 16172 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:11:14.056Z DEBUG 16172 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:11:14.149Z DEBUG 16172 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:11:14.298Z  INFO 16172 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:11:14.421Z  INFO 16172 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:11:14.424Z  INFO 16172 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:11:14.429Z  INFO 16172 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-12-27T20:11:14.516Z  INFO 16172 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.129 seconds (process running for 11.511)
+2024-12-27T20:11:15.751Z DEBUG 16172 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:11:15.805Z  INFO 16172 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:11:15.806Z  INFO 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:11:16.113Z DEBUG 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:11:16.115Z  INFO 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:11:16.116Z  INFO 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:11:16.117Z  INFO 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:11:16.117Z DEBUG 16172 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:11:16.184Z DEBUG 16172 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:11:16.199Z DEBUG 16172 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:11:16.528Z DEBUG 16172 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:11:06 GMT 2024
+2024-12-27T20:11:16.535Z  INFO 16172 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:11:16.543Z  INFO 16172 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:11:16.549Z  INFO 16172 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:11:53.139Z  INFO 8712 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 8712 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:11:53.142Z DEBUG 8712 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:11:53.144Z  INFO 8712 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:11:53.192Z DEBUG 8712 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:11:54.989Z  INFO 8712 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:11:55.164Z  INFO 8712 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.
+2024-12-27T20:11:56.290Z  INFO 8712 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:11:56.465Z  INFO 8712 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:11:56.585Z  INFO 8712 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:11:57.414Z  INFO 8712 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:11:57.508Z  INFO 8712 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:11:58.114Z  INFO 8712 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:11:58.118Z  INFO 8712 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:11:58.154Z  WARN 8712 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:11:58.192Z  INFO 8712 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:11:59.597Z  INFO 8712 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:11:59.659Z  INFO 8712 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:12:00.688Z  WARN 8712 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:12:00.909Z DEBUG 8712 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:12:01.191Z DEBUG 8712 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:12:01.251Z DEBUG 8712 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:12:01.345Z DEBUG 8712 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:12:01.431Z  INFO 8712 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:12:01.574Z  INFO 8712 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:12:01.574Z  INFO 8712 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:12:01.579Z  INFO 8712 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2024-12-27T20:12:01.658Z  INFO 8712 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.47 seconds (process running for 12.065)
+2024-12-27T20:12:02.672Z DEBUG 8712 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:12:02.723Z  INFO 8712 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:12:02.724Z  INFO 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:12:03.017Z DEBUG 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:12:03.019Z  INFO 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:12:03.020Z  INFO 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:12:03.021Z  INFO 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:12:03.021Z DEBUG 8712 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:12:03.080Z DEBUG 8712 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:12:03.095Z DEBUG 8712 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:12:03.416Z DEBUG 8712 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:11:53 GMT 2024
+2024-12-27T20:12:03.425Z  INFO 8712 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:12:03.431Z  INFO 8712 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:12:03.436Z  INFO 8712 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:12:55.071Z  INFO 19720 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 19720 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:12:55.074Z DEBUG 19720 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:12:55.078Z  INFO 19720 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:12:55.123Z DEBUG 19720 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c
+2024-12-27T20:12:56.941Z  INFO 19720 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:12:57.107Z  INFO 19720 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 1 JPA repository interface.
+2024-12-27T20:12:58.286Z  INFO 19720 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:12:58.451Z  INFO 19720 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:12:58.813Z  INFO 19720 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:12:59.530Z  INFO 19720 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:12:59.632Z  INFO 19720 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:13:00.150Z  INFO 19720 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:13:00.171Z  INFO 19720 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:13:00.218Z  WARN 19720 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:13:00.261Z  INFO 19720 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:13:01.773Z  INFO 19720 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:13:01.816Z  INFO 19720 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:13:02.763Z  WARN 19720 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:13:02.990Z DEBUG 19720 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:13:03.300Z DEBUG 19720 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:13:03.371Z DEBUG 19720 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:13:03.475Z DEBUG 19720 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:13:03.583Z  INFO 19720 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:13:03.736Z  INFO 19720 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:13:03.738Z  INFO 19720 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:13:03.740Z  INFO 19720 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T20:13:03.858Z  INFO 19720 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.783 seconds (process running for 12.226)
+2024-12-27T20:13:04.937Z DEBUG 19720 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:13:04.990Z  INFO 19720 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:13:04.991Z  INFO 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:13:05.299Z DEBUG 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:13:05.301Z  INFO 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:05.302Z  INFO 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:05.302Z  INFO 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:05.302Z DEBUG 19720 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:13:05.340Z DEBUG 19720 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:13:05.354Z DEBUG 19720 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:13:05.588Z DEBUG 19720 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58783f6c, started on Fri Dec 27 20:12:55 GMT 2024
+2024-12-27T20:13:05.597Z  INFO 19720 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:13:05.601Z  INFO 19720 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:13:05.606Z  INFO 19720 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:13:36.468Z  INFO 17892 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Starting TransactionControllerIntegrationTest using Java 17.0.7 with PID 17892 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:13:36.470Z DEBUG 17892 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:13:36.473Z  INFO 17892 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:13:36.573Z DEBUG 17892 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@49ef32e0
+2024-12-27T20:13:38.200Z  INFO 17892 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:13:38.378Z  INFO 17892 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150 ms. Found 1 JPA repository interface.
+2024-12-27T20:13:39.431Z  INFO 17892 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:13:39.609Z  INFO 17892 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:13:39.753Z  INFO 17892 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:13:40.711Z  INFO 17892 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:13:40.802Z  INFO 17892 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:13:41.317Z  INFO 17892 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:13:41.322Z  INFO 17892 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:13:41.378Z  WARN 17892 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:13:41.445Z  INFO 17892 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:13:43.568Z  INFO 17892 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:13:43.622Z  INFO 17892 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:13:44.588Z  WARN 17892 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:13:44.800Z DEBUG 17892 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:13:45.081Z DEBUG 17892 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:13:45.164Z DEBUG 17892 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:13:45.283Z DEBUG 17892 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:13:45.365Z  INFO 17892 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:13:45.485Z  INFO 17892 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:13:45.489Z  INFO 17892 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:13:45.494Z  INFO 17892 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2024-12-27T20:13:45.579Z  INFO 17892 --- [transaction] [main] v.t.TransactionControllerIntegrationTest : Started TransactionControllerIntegrationTest in 9.965 seconds (process running for 12.616)
+2024-12-27T20:13:46.562Z DEBUG 17892 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:13:46.607Z  INFO 17892 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T20:13:46.607Z  INFO 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:13:46.908Z DEBUG 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:13:46.909Z ERROR 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T20:13:46.913Z DEBUG 17892 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T20:13:46.913Z ERROR 17892 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T20:13:46.986Z DEBUG 17892 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:13:46.993Z DEBUG 17892 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T20:13:47.019Z DEBUG 17892 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T20:13:47.231Z DEBUG 17892 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:13:47.232Z  INFO 17892 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:13:47.232Z  INFO 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:13:47.269Z DEBUG 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:13:47.299Z  INFO 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:47.304Z  INFO 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:47.311Z  INFO 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:13:47.313Z DEBUG 17892 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:13:47.333Z DEBUG 17892 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:13:47.344Z DEBUG 17892 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:13:47.423Z DEBUG 17892 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@49ef32e0, started on Fri Dec 27 20:13:36 GMT 2024
+2024-12-27T20:13:47.430Z  INFO 17892 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:13:47.437Z  INFO 17892 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:13:47.452Z  INFO 17892 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-27T20:19:44.347Z  INFO 20288 --- [transaction] [main] c.v.t.TransactionApplicationTests        : Starting TransactionApplicationTests using Java 17.0.7 with PID 20288 (started by LENOVO in C:\JavaProjects\VirginMOneyAssessment\transaction)
+2024-12-27T20:19:44.350Z DEBUG 20288 --- [transaction] [main] c.v.t.TransactionApplicationTests        : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-27T20:19:44.352Z  INFO 20288 --- [transaction] [main] c.v.t.TransactionApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2024-12-27T20:19:44.398Z DEBUG 20288 --- [transaction] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@11ee02f8
+2024-12-27T20:19:46.116Z  INFO 20288 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27T20:19:46.287Z  INFO 20288 --- [transaction] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.
+2024-12-27T20:19:47.323Z  INFO 20288 --- [transaction] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27T20:19:47.462Z  INFO 20288 --- [transaction] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-27T20:19:47.554Z  INFO 20288 --- [transaction] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-27T20:19:48.307Z  INFO 20288 --- [transaction] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27T20:19:48.378Z  INFO 20288 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-27T20:19:48.846Z  INFO 20288 --- [transaction] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./transactions user=
+2024-12-27T20:19:48.851Z  INFO 20288 --- [transaction] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-27T20:19:48.894Z  WARN 20288 --- [transaction] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27T20:19:48.933Z  INFO 20288 --- [transaction] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-27T20:19:50.482Z  INFO 20288 --- [transaction] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27T20:19:50.529Z  INFO 20288 --- [transaction] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:19:51.502Z  WARN 20288 --- [transaction] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27T20:19:51.685Z DEBUG 20288 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-12-27T20:19:52.002Z DEBUG 20288 --- [transaction] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-27T20:19:52.068Z DEBUG 20288 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-27T20:19:52.164Z DEBUG 20288 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-27T20:19:52.270Z  INFO 20288 --- [transaction] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./transactions'
+2024-12-27T20:19:52.413Z  INFO 20288 --- [transaction] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-12-27T20:19:52.414Z  INFO 20288 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-12-27T20:19:52.417Z  INFO 20288 --- [transaction] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-12-27T20:19:52.551Z  INFO 20288 --- [transaction] [main] c.v.t.TransactionApplicationTests        : Started TransactionApplicationTests in 8.999 seconds (process running for 11.604)
+2024-12-27T20:19:53.665Z DEBUG 20288 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:19:53.707Z  INFO 20288 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: MyMonthlyDD
+2024-12-27T20:19:53.707Z  INFO 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:19:54.008Z DEBUG 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:19:54.011Z  INFO 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:19:54.015Z  INFO 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:19:54.016Z  INFO 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Entity to Dto Mapping invoked
+2024-12-27T20:19:54.016Z DEBUG 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Response Status: 200 OK, TransactionSize: 3
+2024-12-27T20:19:54.074Z DEBUG 20288 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:19:54.088Z DEBUG 20288 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TransactionDto[id=1, date=2020-10-28, vendor=PureGym, type=direct debit, amount=40.0, category=MyMo (truncated)...]
+2024-12-27T20:19:54.411Z DEBUG 20288 --- [transaction] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.virginmoney.transaction.controller.TransactionController#getAllTransactions(String)
+2024-12-27T20:19:54.413Z  INFO 20288 --- [transaction] [main] c.v.t.controller.TransactionController   : Request Method: GET, URI: /transaction/category, Params: vacation
+2024-12-27T20:19:54.413Z  INFO 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Fecthing data from DB invoked
+2024-12-27T20:19:54.417Z DEBUG 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : Data fetch - Successful
+2024-12-27T20:19:54.417Z ERROR 20288 --- [transaction] [main] c.v.t.service.TransactionServiceImpl     : No transaction found category vacation - throws exception
+2024-12-27T20:19:54.421Z DEBUG 20288 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.virginmoney.transaction.exception.GlobalExceptionHandler#handleTransactionNotFound(TransactionNotFound)
+2024-12-27T20:19:54.421Z ERROR 20288 --- [transaction] [main] c.v.t.exception.GlobalExceptionHandler   : Transaction Not found - Exception handler invoked
+2024-12-27T20:19:54.424Z DEBUG 20288 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-12-27T20:19:54.433Z DEBUG 20288 --- [transaction] [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse[status=404, message=No transactions found for the category : vacation]]
+2024-12-27T20:19:54.435Z DEBUG 20288 --- [transaction] [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.virginmoney.transaction.exception.TransactionNotFound: No transactions found for the category : vacation]
+2024-12-27T20:19:54.469Z DEBUG 20288 --- [transaction] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@11ee02f8, started on Fri Dec 27 20:19:44 GMT 2024
+2024-12-27T20:19:54.474Z  INFO 20288 --- [transaction] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27T20:19:54.480Z  INFO 20288 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-27T20:19:54.499Z  INFO 20288 --- [transaction] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
