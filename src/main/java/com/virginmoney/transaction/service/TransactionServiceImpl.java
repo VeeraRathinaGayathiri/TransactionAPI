@@ -49,7 +49,7 @@ public class TransactionServiceImpl implements TransactionService{
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
 
         double totalSpend = allTransactions.stream()
-                    .map(transactionEntity -> transactionEntity.getAmount())
+                    .map(TransactionEntity::getAmount)
                     .reduce(0.0, Double::sum);
         logger.debug("Response Status: {}, totalspendCalculated: {}",
                 HttpStatus.OK, totalSpend > 0.0);
@@ -145,9 +145,10 @@ public class TransactionServiceImpl implements TransactionService{
         if (transactions.isPresent() && !transactions.get().isEmpty()) {
             transactions.get().forEach(allTransactions::add);
             return allTransactions;
-        } else
+        } else {
             logger.error("No transaction found category {} - throws exception", category);
             throw new TransactionNotFound("No transactions found for the category : " + category);
+        }
     }
 
     private TransactionEntity mapToEntity(TransactionRequestDto transactionRequestDto) {
