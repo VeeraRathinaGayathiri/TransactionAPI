@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class TransactionApplicationE2ETests {
+class TransactionE2EApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -30,7 +30,7 @@ class TransactionApplicationE2ETests {
 
 
 	@Test
-	public void getAllTransactions_EndToEndSucccess_shouldReturnTransactionData() throws Exception {
+	void getAllTransactions_EndToEndSucccess_shouldReturnTransactionData() throws Exception {
 		String response = mockMvc.perform(get("/transaction/MyMonthlyDD"))
 				.andExpect(status().isOk())
 				.andReturn()
@@ -49,7 +49,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getAllTransactions_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getAllTransactions_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/vacation"))
 				.andExpect(status().isNotFound())
 				.andReturn()
@@ -65,7 +65,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getTotalSpend_EndToEndSuccess_shouldReturnTotalSpend() throws Exception {
+	void getTotalSpend_EndToEndSuccess_shouldReturnTotalSpend() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/totalspend/MyMonthlyDD"))
 				.andExpect(status().isOk())
@@ -82,7 +82,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getTotalSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getTotalSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/totalspend/vacation"))
 				.andExpect(status().isNotFound())
@@ -100,7 +100,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getMonthlyAverage_EndToEndSuccess_shouldReturnMonthlyAverage() throws Exception {
+	void getMonthlyAverage_EndToEndSuccess_shouldReturnMonthlyAverage() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/monthlyAverage/MyMonthlyDD"))
 				.andExpect(status().isOk())
@@ -117,7 +117,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getMonthlyAverage_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getMonthlyAverage_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/monthlyAverage/vacation"))
 				.andExpect(status().isNotFound())
@@ -135,7 +135,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getHighestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
+	void getHighestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/highestSpend/MyMonthlyDD")
 						.param("year", String.valueOf(2020)))
@@ -153,7 +153,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getHighestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getHighestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/highestSpend/vacation")
 						.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
@@ -170,7 +170,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getHighestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
+	void getHighestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/highestSpend/MyMonthlyDD")
 						.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
@@ -188,7 +188,7 @@ class TransactionApplicationE2ETests {
 
 
 	@Test
-	public void getLowestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
+	void getLowestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/lowestSpend/MyMonthlyDD")
 						.param("year", String.valueOf(2020)))
@@ -206,7 +206,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getLowestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
+	void getLowestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/lowestSpend/MyMonthlyDD")
 				.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
@@ -224,7 +224,7 @@ class TransactionApplicationE2ETests {
 	}
 
 	@Test
-	public void getLowestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getLowestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/lowestSpend/vacation")
 						.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
