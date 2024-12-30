@@ -138,22 +138,4 @@ class TransactionControllerTest {
 
     }
 
-  /*  @Test
-    void getAllTransactions_TransactionNotFoundForCategory_shouldReturnErrorResponse() {
-        String category = "MyMonthlyDD";
-
-        ErrorResponse error = new ErrorResponse(HttpStatus.NOT_FOUND.value(), "No transactions found for the category : Vacation",System.currentTimeMillis());
-
-        ResponseEntity mockResponse = new ResponseEntity(error, HttpStatus.NOT_FOUND);
-
-        when(transactionService.getAllTransactions(category)).thenThrow(new TransactionNotFound("No transactions found for the category : Vacation"));
-
-        ResponseEntity<List<TransactionDto>> response = transactionController.getAllTransactions(category);
-*//*
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).isEqualTo(mockResponse);
-        verify(transactionService, times(1)).getAllTransactions(category);*//*
-
-    }*/
-
 }
