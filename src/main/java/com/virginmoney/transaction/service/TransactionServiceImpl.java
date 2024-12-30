@@ -83,10 +83,18 @@ public class TransactionServiceImpl implements TransactionService{
                .mapToDouble(TransactionEntity::getAmount)
                .max();
 
+        if(result.isPresent()) {
         logger.debug("Response Status: {}, isHighestSpendCalculated: {}",
                 HttpStatus.OK, result.getAsDouble());
 
         return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
+        }
+
+        else {
+            logger.error("No transaction found for category {} on {} - throws exception", category, year);
+            throw new TransactionNotFound("No transaction found for this category and year combination");
+
+        }
     }
 
     @Override
@@ -97,10 +105,16 @@ public class TransactionServiceImpl implements TransactionService{
                 .mapToDouble(TransactionEntity::getAmount)
                 .min();
 
-        logger.debug("Response Status: {}, isLowestSpendCalculated: {}",
-                HttpStatus.OK, result.getAsDouble());
+        if(result.isPresent()) {
+            logger.debug("Response Status: {}, isLowestSpendCalculated: {}",
+                    HttpStatus.OK, result.getAsDouble());
 
-        return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
+            return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
+        }
+        else {
+            logger.error("No transaction found for category {} on {} - throws exception", category, year);
+            throw new TransactionNotFound("No transaction found for this category and year combination");
+        }
     }
 
     @Override
