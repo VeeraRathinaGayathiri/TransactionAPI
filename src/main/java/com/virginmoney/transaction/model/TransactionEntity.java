@@ -1,6 +1,7 @@
 package com.virginmoney.transaction.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.virginmoney.transaction.dto.TransactionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +27,7 @@ public class TransactionEntity {
 
     private String vendor;
 
-    private String type;
+    private TransactionType type;
 
     private double amount;
 

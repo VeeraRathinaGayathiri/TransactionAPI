@@ -1,8 +1,10 @@
 package com.virginmoney.transaction.service;
 
 
+import com.virginmoney.transaction.dto.StatisticsDto;
 import com.virginmoney.transaction.dto.TransactionDto;
 import com.virginmoney.transaction.dto.TransactionRequestDto;
+import com.virginmoney.transaction.dto.TransactionType;
 import com.virginmoney.transaction.exception.DatabaseFetchException;
 import com.virginmoney.transaction.exception.TransactionNotFound;
 import com.virginmoney.transaction.model.TransactionEntity;
@@ -29,7 +31,7 @@ public class TransactionServiceImpl implements TransactionService{
 
 
     @Override
-    public ResponseEntity<List<TransactionDto>> getAllTransactions(String category) {
+    public ResponseEntity<List<TransactionDto>> getLatestByCategory(String category) {
 
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
 
@@ -45,12 +47,13 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public ResponseEntity<Double> getTotalSpend(String category) {
+    public ResponseEntity<Double> getTotalSpendByCategory(String category) {
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
 
         double totalSpend = allTransactions.stream()
                     .map(TransactionEntity::getAmount)
                     .reduce(0.0, Double::sum);
+
         logger.debug("Response Status: {}, totalspendCalculated: {}",
                 HttpStatus.OK, totalSpend > 0.0);
 
@@ -59,12 +62,12 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public ResponseEntity<Map<String, Double>> getMonthlyAverage(String category) {
+    public ResponseEntity<Map<String, Double>> getMonthlyAverageByCategory(String category) {
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
 
         Map<String, Double> result = allTransactions.stream()
                     .collect(Collectors.groupingBy(
-                            x -> x.getDate().toLocalDate().getMonth().name() + "_" + x.getDate().toLocalDate().getYear(),
+                            transaction -> transaction.getDate().toLocalDate().getMonth().name() + "_" + transaction.getDate().toLocalDate().getYear(),
                             Collectors.averagingDouble(TransactionEntity::getAmount)
                     ));
 
@@ -75,57 +78,57 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public ResponseEntity<Double> getHighestSpend(String category, int year) {
-        List<TransactionEntity> allTransactions = fetchDataFromDb(category);
+    public ResponseEntity<List<TransactionDto>> saveTransactions(List<TransactionRequestDto> transactionRequests) {
 
-       OptionalDouble result = allTransactions.stream()
-                .filter(x -> x.getDate().toLocalDate().getYear() == year)
-               .mapToDouble(TransactionEntity::getAmount)
-               .max();
+        //
+        // TransactionEntity transactionEntity = transactionRepo.save(mapToEntity(transactionRequests));
+        List<TransactionEntity> transactions = transactionRequests.stream()
+                                                .map(this::mapToEntity)
+                                                .collect(Collectors.toList());
 
-        if(result.isPresent()) {
-        logger.debug("Response Status: {}, isHighestSpendCalculated: {}",
-                HttpStatus.OK, result.getAsDouble());
+        try{
 
-        return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
+            List<TransactionEntity> result = transactionRepo.saveAll(transactions);
+            return new ResponseEntity<>(result.stream()
+                    .map(this::mapToResponseDto)
+                    .collect(Collectors.toList()),
+                    HttpStatus.CREATED);
+        }
+        catch (Exception exception){
+            logger.error("Error storing data - throws exception");
+            throw new DatabaseFetchException("Error storing transactions to database");
         }
 
-        else {
-            logger.error("No transaction found for category {} on {} - throws exception", category, year);
-            throw new TransactionNotFound("No transaction found for this category and year combination");
 
-        }
     }
 
     @Override
-    public ResponseEntity<Double> getLowestSpend(String category, int year) {
+    public ResponseEntity<StatisticsDto> getYearlyStatisticsByCategory(String category, int year) {
         List<TransactionEntity> allTransactions = fetchDataFromDb(category);
-        OptionalDouble result = allTransactions.stream()
-                .filter(x -> x.getDate().toLocalDate().getYear() == year)
+
+        DoubleSummaryStatistics stats = allTransactions.stream()
+                .filter(transaction -> transaction.getDate().toLocalDate().getYear() == year)
                 .mapToDouble(TransactionEntity::getAmount)
-                .min();
+                .summaryStatistics();
 
-        if(result.isPresent()) {
-            logger.debug("Response Status: {}, isLowestSpendCalculated: {}",
-                    HttpStatus.OK, result.getAsDouble());
+        if(stats.getCount() != 0) {
+            StatisticsDto result = StatisticsDto.builder()
+                    .lowest_spend(stats.getMin())
+                    .highest_spend(stats.getMax())
+                    .average_spend(Math.round(stats.getAverage()*100.0)/ 100.0)
+                    .build();
 
-            return(new ResponseEntity<>(result.getAsDouble(), HttpStatus.OK));
+
+            return new ResponseEntity<>(result, HttpStatus.OK);
         }
         else {
-            logger.error("No transaction found for category {} on {} - throws exception", category, year);
-            throw new TransactionNotFound("No transaction found for this category and year combination");
+            logger.error("No transaction found for this year category {} in {} - throws exception", category, year);
+            throw new TransactionNotFound(String.format("No transactions found for the category: %s in %d", category, year));
         }
     }
 
-    @Override
-    public ResponseEntity<TransactionDto> saveTransactions(TransactionRequestDto transactionRequestDto) {
 
-        TransactionEntity transactionEntity = transactionRepo.save(mapToEntity(transactionRequestDto));
-
-        return new ResponseEntity<>(mapToResponseDto(transactionEntity), HttpStatus.CREATED);
-    }
-
-     private List<TransactionEntity> fetchDataFromDb(String category) {
+    private List<TransactionEntity> fetchDataFromDb(String category) {
 
         logger.info("Fecthing data from DB invoked");
 
@@ -156,7 +159,7 @@ public class TransactionServiceImpl implements TransactionService{
         return TransactionEntity.builder()
                 .date(transactionRequestDto.date())
                 .vendor(transactionRequestDto.vendor())
-                .type(transactionRequestDto.type())
+                .type(TransactionType.valueOf(transactionRequestDto.type().toUpperCase()))
                 .amount(transactionRequestDto.amount())
                 .category(transactionRequestDto.category())
                 .build();
@@ -169,7 +172,7 @@ public class TransactionServiceImpl implements TransactionService{
                 .id(transactionEntity.getId())
                 .date(transactionEntity.getDate())
                 .vendor(transactionEntity.getVendor())
-                .type(transactionEntity.getType())
+                .type(String.valueOf(transactionEntity.getType()))
                 .amount(transactionEntity.getAmount())
                 .category(transactionEntity.getCategory())
                 .build();

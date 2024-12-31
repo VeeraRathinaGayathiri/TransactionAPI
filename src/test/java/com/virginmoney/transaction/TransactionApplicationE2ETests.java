@@ -2,6 +2,7 @@ package com.virginmoney.transaction;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.virginmoney.transaction.dto.StatisticsDto;
 import com.virginmoney.transaction.dto.TransactionDto;
 import com.virginmoney.transaction.model.ErrorResponse;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ class TransactionE2EApplicationTests {
 
 
 	@Test
-	void getAllTransactions_EndToEndSucccess_shouldReturnTransactionData() throws Exception {
+	void getLatestByCategory_EndToEndSucccess_shouldReturnTransactionData() throws Exception {
 		String response = mockMvc.perform(get("/transaction/MyMonthlyDD"))
 				.andExpect(status().isOk())
 				.andReturn()
@@ -49,7 +50,7 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getAllTransactions_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getLatestByCategory_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 		String response = mockMvc.perform(get("/transaction/vacation"))
 				.andExpect(status().isNotFound())
 				.andReturn()
@@ -65,7 +66,7 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getTotalSpend_EndToEndSuccess_shouldReturnTotalSpend() throws Exception {
+	void getTotalSpendByCategory_EndToEndSuccess_shouldReturnTotalSpend() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/totalspend/MyMonthlyDD"))
 				.andExpect(status().isOk())
@@ -82,7 +83,7 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getTotalSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getTotalSpendByCategory_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/totalspend/vacation"))
 				.andExpect(status().isNotFound())
@@ -100,7 +101,7 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getMonthlyAverage_EndToEndSuccess_shouldReturnMonthlyAverage() throws Exception {
+	void getMonthlyAverageByCategory_EndToEndSuccess_shouldReturnMonthlyAverage() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/monthlyAverage/MyMonthlyDD"))
 				.andExpect(status().isOk())
@@ -117,7 +118,7 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getMonthlyAverage_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+	void getMonthlyAverageByCategory_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
 
 		String response = mockMvc.perform(get("/transaction/monthlyAverage/vacation"))
 				.andExpect(status().isNotFound())
@@ -135,79 +136,29 @@ class TransactionE2EApplicationTests {
 	}
 
 	@Test
-	void getHighestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
+	void getYearlyStatisticsByCategory_EndToEnd_shouldReturnStatistics() throws Exception {
 
-		String response = mockMvc.perform(get("/transaction/highestSpend/MyMonthlyDD")
+		String response = mockMvc.perform(get("/transaction/yearlyStatistics/MyMonthlyDD")
 						.param("year", String.valueOf(2020)))
 				.andExpect(status().isOk())
 				.andReturn()
 				.getResponse()
 				.getContentAsString();
 
-		Double resultData = objectMapper.readValue(response, Double.class);
+		StatisticsDto resultData = objectMapper.readValue(response, StatisticsDto.class);
 
 		assertAll(
 				() -> assertThat(resultData).isNotNull(),
-				() -> assertThat(resultData).isEqualTo(600.0));
-
-	}
-
-	@Test
-	void getHighestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
-		String response = mockMvc.perform(get("/transaction/highestSpend/vacation")
-						.param("year", String.valueOf(2022)))
-				.andExpect(status().isNotFound())
-				.andReturn()
-				.getResponse()
-				.getContentAsString();
-
-		ErrorResponse error = objectMapper.readValue(response, new TypeReference<ErrorResponse>() {});
-
-		assertAll(
-				() -> assertThat(error.status()).isEqualTo(404),
-				() -> assertThat(error.message()).isEqualTo("No transactions found for the category : vacation")
+				() -> assertThat(resultData.highest_spend()).isEqualTo(600),
+				() -> assertThat(resultData.lowest_spend()).isEqualTo(40),
+				() -> assertThat(resultData.average_spend()).isEqualTo(320)
 		);
-	}
-
-	@Test
-	void getHighestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
-		String response = mockMvc.perform(get("/transaction/highestSpend/MyMonthlyDD")
-						.param("year", String.valueOf(2022)))
-				.andExpect(status().isNotFound())
-				.andReturn()
-				.getResponse()
-				.getContentAsString();
-
-		ErrorResponse error = objectMapper.readValue(response, new TypeReference<ErrorResponse>() {});
-
-		assertAll(
-				() -> assertThat(error.status()).isEqualTo(404),
-				() -> assertThat(error.message()).isEqualTo("No transaction found for this category and year combination")
-		);
-	}
-
-
-	@Test
-	void getLowestSpend_EndToEnd_shouldReturnHighestSpend() throws Exception {
-
-		String response = mockMvc.perform(get("/transaction/lowestSpend/MyMonthlyDD")
-						.param("year", String.valueOf(2020)))
-				.andExpect(status().isOk())
-				.andReturn()
-				.getResponse()
-				.getContentAsString();
-
-		Double resultData = objectMapper.readValue(response, Double.class);
-
-		assertAll(
-				() -> assertThat(resultData).isNotNull(),
-				() -> assertThat(resultData).isEqualTo(40.0));
 
 	}
 
 	@Test
-	void getLowestSpend_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
-		String response = mockMvc.perform(get("/transaction/lowestSpend/MyMonthlyDD")
+	void getYearlyStatisticsByCategory_CategoryFound_NoTransactionForGivenYear_shouldReturnErrorResponse() throws Exception {
+		String response = mockMvc.perform(get("/transaction/yearlyStatistics/MyMonthlyDD")
 				.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
 				.andReturn()
@@ -218,14 +169,14 @@ class TransactionE2EApplicationTests {
 
 		assertAll(
 				() -> assertThat(error.status()).isEqualTo(404),
-				() -> assertThat(error.message()).isEqualTo("No transaction found for this category and year combination")
+				() -> assertThat(error.message()).isEqualTo("No transactions found for the category: MyMonthlyDD in 2022")
 		);
 
 	}
 
 	@Test
-	void getLowestSpend_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
-		String response = mockMvc.perform(get("/transaction/lowestSpend/vacation")
+	void getYearlyStatisticsByCategory_CategoryNotFound_shouldReturnErrorResponse() throws Exception {
+		String response = mockMvc.perform(get("/transaction/yearlyStatistics/vacation")
 						.param("year", String.valueOf(2022)))
 				.andExpect(status().isNotFound())
 				.andReturn()
