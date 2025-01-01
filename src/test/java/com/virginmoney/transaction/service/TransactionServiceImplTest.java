@@ -21,7 +21,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -79,8 +79,8 @@ class TransactionServiceImplTest {
         List<TransactionDto> result = response.getBody();
         assertAll(
                 () -> assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK),
-                () -> assertThat(response.getBody().isEmpty()).isFalse(),
-                () -> assertThat(response.getBody().size()).isEqualTo(5),
+                () -> assertThat(response.getBody()).isNotEmpty(),
+                () -> assertThat(response.getBody()).hasSize(5),
                 () -> assertThat(result.get(0).amount()).isEqualTo(600)
         );
 
@@ -109,7 +109,7 @@ class TransactionServiceImplTest {
 
         assertAll(
                 () -> assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK),
-                () -> assertThat(response.getBody().isNaN()).isFalse(),
+                () -> assertThat(response.getBody()).isNotNull(),
                 () -> assertThat(response.getBody()).isEqualTo(1722.6)
         );
 
@@ -138,9 +138,9 @@ class TransactionServiceImplTest {
 
         assertAll(
                 () -> assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK),
-                () -> assertThat(response.getBody().isEmpty()).isFalse(),
-                () -> assertThat(result.size()).isEqualTo(4),
-                () -> assertThat(result.get("OCTOBER_2020")).isEqualTo(327.3)
+                () -> assertThat(response.getBody()).isNotEmpty(),
+                () -> assertThat(result.keySet()).hasSize(4),
+                () -> assertThat(result).containsEntry("OCTOBER_2020", 327.3)
         );
 
     }

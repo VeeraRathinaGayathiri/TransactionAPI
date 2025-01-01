@@ -23,9 +23,10 @@ public class TransactionServiceImpl implements TransactionService{
 
     private static final Logger logger = LoggerFactory.getLogger(TransactionServiceImpl.class);
 
-    private TransactionRepo transactionRepo;
+    private final TransactionRepo transactionRepo;
 
-    public TransactionServiceImpl(TransactionRepo transactionRepo) {
+
+  public TransactionServiceImpl(TransactionRepo transactionRepo) {
         this.transactionRepo = transactionRepo;
     }
 
