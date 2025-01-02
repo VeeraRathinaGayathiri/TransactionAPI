@@ -12,13 +12,13 @@ This project implements a RESTful API using Java to manipulate transaction data.
 - Unit and Integration testing for all functionalities.
 
 ## Endpoints
-| S.No | Use Case                                      | Method | Endpoint                                  |
-|------|-----------------------------------------------|--------|-------------------------------------------|
-| 1    | All transactions for a given category         | GET    | `/transaction/getLatestByCategory`        |
-| 2    | Total outgoing per category                   | GET    | `/transaction/getTotalSpendByCategory`    |
-| 3    | Highest/Lowest spend for a category in a year | GET    | `/transaction/getYearlyStatisticsByCategory` |
-| 4    | Monthly average spend in a category           | GET    | `/transaction/getMonthlyAverageByCategory` |
-| 5    | Save transactions                             | POST   | `/transaction/saveTransactions`           |
+| S.No | Use Case                                      | Method | Endpoint                                               |
+|------|-----------------------------------------------|--------|--------------------------------------------------------|
+| 1    | All transactions for a given category         | GET    | `/transaction/{category`                               |
+| 2    | Total outgoing per category                   | GET    | `/transaction/totalspend/{category}`                   |
+| 3    | Highest/Lowest spend for a category in a year | GET    | `/transaction/yearlyStatistics/{category}?year={year}` |
+| 4    | Monthly average spend in a category           | GET    | `/transaction/monthlyAverage/{category}`               |
+| 5    | Save transactions                             | POST   | `/transaction/save`                                    |
 
 ## System Design
 - **Controller Layer**: Manages HTTP requests and responses.
@@ -40,3 +40,51 @@ This project implements a RESTful API using Java to manipulate transaction data.
 ***New learnings during the development ***
 1. Unit testing for Private methods - Suggested way to cover is via public classes. If an extensive private method test is needed - use Power Mockito.
 2. AssertJ assertions for Map - dedicated assertions like Map.hasSize() instead of Map.size().isEqualTo();
+
+## Sample Data JSON for POST Mapping - transaction/save - Request Body:
+
+[
+{
+"date": "28/Oct/2020",
+"vendor": "PureGym",
+"type": "direct_debit",
+"amount": 40,
+"category": "MyMonthlyDD"
+},
+{
+"date": "30/Sep/2020",
+"vendor": "McMillan",
+"type": "internet",
+"amount": 10,
+"category": ""
+},
+{
+"date": "01/Nov/2020",
+"vendor": "Morrisons",
+"type": "card",
+"amount": 10.40,
+"category": "Groceries"
+},
+{
+"date": "01/Oct/2020",
+"vendor": "M&S",
+"type": "card",
+"amount": 5.99,
+"category": "Groceries"
+},
+{
+"date": "28/Oct/2021",
+"vendor": "CYBG",
+"type": "direct_debit",
+"amount": 600,
+"category": "MyMonthlyDD"
+}
+{
+"date": "28/Oct/2020",
+"vendor": "CYBG",
+"type": "direct_debit",
+"amount": 600,
+"category": "MyMonthlyDD"
+}
+
+]
