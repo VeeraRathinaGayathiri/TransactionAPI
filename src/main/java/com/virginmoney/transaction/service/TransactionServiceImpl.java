@@ -4,11 +4,12 @@ package com.virginmoney.transaction.service;
 import com.virginmoney.transaction.dto.StatisticsDto;
 import com.virginmoney.transaction.dto.TransactionDto;
 import com.virginmoney.transaction.dto.TransactionRequestDto;
-import com.virginmoney.transaction.dto.TransactionType;
+import com.virginmoney.transaction.model.TransactionType;
 import com.virginmoney.transaction.exception.DatabaseFetchException;
 import com.virginmoney.transaction.exception.TransactionNotFound;
 import com.virginmoney.transaction.model.TransactionEntity;
 import com.virginmoney.transaction.repo.TransactionRepo;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -19,17 +20,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService{
 
     private static final Logger logger = LoggerFactory.getLogger(TransactionServiceImpl.class);
 
     private final TransactionRepo transactionRepo;
-
-
-  public TransactionServiceImpl(TransactionRepo transactionRepo) {
-        this.transactionRepo = transactionRepo;
-    }
-
 
     @Override
     public ResponseEntity<List<TransactionDto>> getLatestByCategory(String category) {

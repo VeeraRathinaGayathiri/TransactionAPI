@@ -5,6 +5,7 @@ import com.virginmoney.transaction.dto.StatisticsDto;
 import com.virginmoney.transaction.dto.TransactionDto;
 import com.virginmoney.transaction.dto.TransactionRequestDto;
 import com.virginmoney.transaction.service.TransactionServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -14,18 +15,15 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/transaction")
 public class TransactionController {
 
     private static final Logger logger = LoggerFactory.getLogger(TransactionController.class);
+
     private final TransactionServiceImpl transactionService;
 
-    //@Autowired
-    public TransactionController(TransactionServiceImpl transactionService) {
-        this.transactionService = transactionService;
-    }
-
-   @PostMapping()
+   @PostMapping("/save")
     public ResponseEntity<List<TransactionDto>> saveTransactions(@RequestBody List<TransactionRequestDto> transactionRequests) {
         logger.info("Request Method: POST, URI: /transaction, Params : TransactionList of Size {}", transactionRequests.size());
         return transactionService.saveTransactions(transactionRequests);

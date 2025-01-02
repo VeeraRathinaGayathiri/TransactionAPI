@@ -3,7 +3,7 @@ package com.virginmoney.transaction.service;
 
 import com.virginmoney.transaction.dto.StatisticsDto;
 import com.virginmoney.transaction.dto.TransactionDto;
-import com.virginmoney.transaction.dto.TransactionType;
+import com.virginmoney.transaction.model.TransactionType;
 import com.virginmoney.transaction.exception.DatabaseFetchException;
 import com.virginmoney.transaction.exception.TransactionNotFound;
 import com.virginmoney.transaction.model.TransactionEntity;

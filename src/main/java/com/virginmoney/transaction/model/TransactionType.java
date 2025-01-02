@@ -1,4 +1,4 @@
-package com.virginmoney.transaction.dto;
+package com.virginmoney.transaction.model;
 
 public enum TransactionType {
     CARD,
