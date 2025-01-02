@@ -1,12 +1,42 @@
-REST API :
-1. Considered all the use-cases of assessment as separate endpoints
-2. Utilized Java Streams for data manipulation
-3. Global Exception handler utilized for custom exception handling
-4. Slf4j Loggers are used appropriately.
-5. Unit and Integration tests are covered.
+# Project Name: RESTful API for Transaction Management
+
+## Overview
+This project implements a RESTful API using Java to manipulate transaction data. It addresses all the use cases outlined in the assessment, as separate endpoints.
+
+## Features
+- Developed in Java with a layered architecture.
+- RESTful API with endpoints for the given usecases.
+- Java Streams for efficient data manipulation.
+- Global Exception Handling for consistent error management.
+- Comprehensive logging using SLF4J.
+- Unit and Integration testing for all functionalities.
+
+## Endpoints
+| S.No | Use Case                                      | Method | Endpoint                                  |
+|------|-----------------------------------------------|--------|-------------------------------------------|
+| 1    | All transactions for a given category         | GET    | `/transaction/getLatestByCategory`        |
+| 2    | Total outgoing per category                   | GET    | `/transaction/getTotalSpendByCategory`    |
+| 3    | Highest/Lowest spend for a category in a year | GET    | `/transaction/getYearlyStatisticsByCategory` |
+| 4    | Monthly average spend in a category           | GET    | `/transaction/getMonthlyAverageByCategory` |
+| 5    | Save transactions                             | POST   | `/transaction/saveTransactions`           |
+
+## System Design
+- **Controller Layer**: Manages HTTP requests and responses.
+- **Service Layer**: Contains business logic for processing transactions.
+- **Repository Layer**: Interfaces with an H2 file-based database.
+- **DTO Layer**: Separates database models from user interactions.
 
 
+## Testing
+- Unit Tests with JUnit and Mockito.
+- Integration Tests to validate end-to-end API functionality.
 
-***Key learnings during this development ***
-1. Mockito by default cannot mock static or final methods in a class. Need extended library - Mockito-inline.
-2. Private method unit testing - Suggested way to cover via public classes. If an extensive private method test is needed - use Power Mockito.
+## Future Enhancements
+- Add Swagger/OpenAPI documentation.
+- Enhance security with authentication and authorization.
+- Implement caching mechanisms for frequently accessed data.
+
+
+***New learnings during the development ***
+1. Unit testing for Private methods - Suggested way to cover is via public classes. If an extensive private method test is needed - use Power Mockito.
+2. AssertJ assertions for Map - dedicated assertions like Map.hasSize() instead of Map.size().isEqualTo();
