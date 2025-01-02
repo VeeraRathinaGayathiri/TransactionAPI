@@ -18,7 +18,7 @@ This project implements a RESTful API using Java to manipulate transaction data.
 | 2    | Total outgoing per category                   | GET    | `/transaction/totalspend/{category}`                   |
 | 3    | Highest/Lowest spend for a category in a year | GET    | `/transaction/yearlyStatistics/{category}?year={year}` |
 | 4    | Monthly average spend in a category           | GET    | `/transaction/monthlyAverage/{category}`               |
-| 5    | Additinal Endpoint -Save transactions         | POST   | `/transaction/save`                                    |
+| 5    | Additional Endpoint -Save transactions        | POST   | `/transaction/save`                                    |
 
 ## System Design
 - **Controller Layer**: Manages HTTP requests and responses.
