@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface TransactionService {
+
     ResponseEntity<List<TransactionDto>> getLatestByCategory(String category);
 
     ResponseEntity<Double> getTotalSpendByCategory(String category);

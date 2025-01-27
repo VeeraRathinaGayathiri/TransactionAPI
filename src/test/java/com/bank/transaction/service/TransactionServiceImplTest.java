@@ -200,4 +200,5 @@ class TransactionServiceImplTest {
         assertThat(caughtException.getMessage()).isEqualTo("Error fetching transactions from database");
 
     }
+
 }
